@@ -1,18 +1,26 @@
-import "../src/styles/app.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
+  const theme = createTheme({
+    fonts: {
+      primary: "Agraham",
+      secondary: "Metrophobic",
+    },
+  });
+
   return (
-    <div className="app-container">
-      <video
-        className="hero-video"
-        src="sz.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ThemeProvider>
+    </Router>
   );
-}
+};
 
 export default App;

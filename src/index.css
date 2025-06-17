@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: "Agraham";
+  src: url("./assets/fonts/Agraham.otf") format("opentype");
 }
